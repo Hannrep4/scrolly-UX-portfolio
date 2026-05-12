@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import AnimatedReveal from '@/components/AnimatedReveal/AnimatedReveal'
 import styles from './About.module.css'
 
@@ -27,10 +28,14 @@ export default function About() {
           <div className={styles.left}>
             <AnimatedReveal delay={0.1}>
               <div className={styles.imageWrapper}>
-                <div className={styles.imagePlaceholder} aria-label="Hannah's profile photo">
-                  <span className={styles.imageEmoji}>🐱</span>
-                  <p className={styles.imageNote}>Add your photo in<br />/public/images/profile.jpg</p>
-                </div>
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Hannah smiling in a bright atrium"
+                  width={360}
+                  height={480}
+                  className={styles.profileImg}
+                  priority
+                />
                 <div className={styles.imageAccent} aria-hidden="true" />
               </div>
             </AnimatedReveal>
