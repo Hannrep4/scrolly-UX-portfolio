@@ -1,6 +1,6 @@
 ---
 slug: ai-job-tech
-title: Accessible Assignment Companion
+title: AssignMates!
 summary: A responsive React + TypeScript web app that helps college students manage assignments and reduce academic stress — built with deep accessibility support from the ground up.
 link: https://hannrep4.github.io/resume-analysis-project/
 ---
@@ -13,7 +13,7 @@ College students dealing with heavy course loads often experience executive over
 
 ## What I Built
 
-The **Accessible Assignment Companion** is a responsive web app that combines assignment tracking with a supportive virtual companion interface. The companion responds to the student's workload state, making the experience feel less like a to-do list and more like having a study buddy.
+**AssignMates!** is a responsive web app that combines assignment tracking with a supportive virtual companion interface. The companion responds to the student's workload state, making the experience feel less like a to-do list and more like having a study buddy.
 
 Key features:
 
@@ -28,7 +28,7 @@ Built with **React + TypeScript** and deployed to GitHub Pages via Vite. TypeScr
 
 ## Accessibility as a Design Priority
 
-Accessibility wasn't an afterthought — it was a core requirement I set for myself from the start. The app implements:
+Accessibility wasn't an afterthought — it was a core requirement I set for myself from the start. AssignMates! implements:
 
 - Semantic HTML structure throughout
 - Keyboard-friendly interactions on all interactive elements
@@ -45,7 +45,7 @@ I chose React with TypeScript over plain JavaScript to practice production-level
 
 ## Outcome
 
-A fully deployed, accessible web application that demonstrates I can translate a user need into a complete, production-ready interface — not just a Figma mock.
+A fully deployed, accessible web application, AssignMates! demonstrates that I can translate a user need into a complete, production-ready interface — not just a Figma mock.
 
 ## Reflection
 
