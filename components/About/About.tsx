@@ -1,0 +1,106 @@
+'use client'
+
+import AnimatedReveal from '@/components/AnimatedReveal/AnimatedReveal'
+import styles from './About.module.css'
+
+const tools = [
+  { name: 'Figma', emoji: '🎨', color: '#7B61FF' },
+  { name: 'Photoshop', emoji: '🖼️', color: '#31A8FF' },
+  { name: 'Illustrator', emoji: '✏️', color: '#FF9A00' },
+  { name: 'VS Code', emoji: '💻', color: '#007ACC' },
+  { name: 'React', emoji: '⚛️', color: '#61DAFB' },
+  { name: 'Canva', emoji: '🎭', color: '#00C4CC' },
+]
+
+export default function About() {
+  return (
+    <section id="about" className={styles.about}>
+      <div className={styles.dotBg} aria-hidden="true" />
+
+      <div className={styles.container}>
+        <AnimatedReveal>
+          <p className={styles.sectionLabel}>✦ About Me</p>
+        </AnimatedReveal>
+
+        <div className={styles.grid}>
+          {/* Left: image + bio */}
+          <div className={styles.left}>
+            <AnimatedReveal delay={0.1}>
+              <div className={styles.imageWrapper}>
+                <div className={styles.imagePlaceholder} aria-label="Hannah's profile photo">
+                  <span className={styles.imageEmoji}>🐱</span>
+                  <p className={styles.imageNote}>Add your photo in<br />/public/images/profile.jpg</p>
+                </div>
+                <div className={styles.imageAccent} aria-hidden="true" />
+              </div>
+            </AnimatedReveal>
+          </div>
+
+          {/* Right: bio + tools */}
+          <div className={styles.right}>
+            <AnimatedReveal delay={0.15}>
+              <h2 className={styles.heading}>
+                Designing for the<br />
+                <span className={styles.accent}>human in the room.</span>
+              </h2>
+            </AnimatedReveal>
+
+            <AnimatedReveal delay={0.25}>
+              <p className={styles.bio}>
+                I&rsquo;m a UX/UI design student passionate about creating digital
+                experiences that feel intuitive, accessible, and a little bit
+                delightful. I move through the full design process — research,
+                wireframing, prototyping, testing — always keeping real people at
+                the center.
+              </p>
+              <p className={styles.bio}>
+                When I&rsquo;m not deep in a Figma file, you&rsquo;ll find me watching UX
+                teardowns, experimenting with digital media, or hanging out with
+                my cats.
+              </p>
+            </AnimatedReveal>
+
+            <AnimatedReveal delay={0.35}>
+              <div className={styles.linksRow}>
+                <a
+                  href="https://github.com/Hannrep4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.profileLink}
+                >
+                  GitHub ↗
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/your-linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${styles.profileLink} ${styles.profileLinkBlue}`}
+                >
+                  LinkedIn ↗
+                </a>
+              </div>
+            </AnimatedReveal>
+
+            <AnimatedReveal delay={0.45}>
+              <p className={styles.toolsLabel}>Tools & Technologies</p>
+              <div className={styles.toolsGrid}>
+                {tools.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className={styles.tool}
+                    style={{ '--tool-color': tool.color } as React.CSSProperties}
+                  >
+                    <span className={styles.toolEmoji} aria-hidden="true">
+                      {tool.emoji}
+                    </span>
+                    <span className={styles.toolName}>{tool.name}</span>
+                  </div>
+                ))}
+              </div>
+            </AnimatedReveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
