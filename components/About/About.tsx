@@ -56,9 +56,12 @@ export default function About() {
                 the center.
               </p>
               <p className={styles.bio}>
-                When I&rsquo;m not deep in a Figma file, you&rsquo;ll find me watching UX
-                teardowns, experimenting with digital media, or hanging out with
-                my cats.
+                Outside of my studies, I am an avid baker, pianist, and illustrator
+                continuously looking for ways to improve my current skills. I am often
+                found deep in recipe blogs, fervently playing a song on my piano, or
+                hard at work on another drawing. These passions make up the core of my
+                being, shaping me into an individual who is eager to learn new things
+                and celebrates self-growth.
               </p>
             </AnimatedReveal>
 
