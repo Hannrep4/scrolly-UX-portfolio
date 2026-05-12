@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import AnimatedReveal from '@/components/AnimatedReveal/AnimatedReveal'
 import styles from './About.module.css'
 
@@ -28,13 +27,11 @@ export default function About() {
           <div className={styles.left}>
             <AnimatedReveal delay={0.1}>
               <div className={styles.imageWrapper}>
-                <Image
-                  src="/images/profile.jpg"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/profile.jpg`}
                   alt="Hannah smiling in a bright atrium"
-                  width={360}
-                  height={480}
                   className={styles.profileImg}
-                  priority
                 />
                 <div className={styles.imageAccent} aria-hidden="true" />
               </div>
