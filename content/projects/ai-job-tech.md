@@ -1,67 +1,52 @@
 ---
 slug: ai-job-tech
-title: AI-Powered Job Search Companion
-summary: A concept UX design for an AI-assisted job search tool built for early-career designers — helping them find roles that match not just their current skills, but who they're becoming.
-link: "#"
+title: Accessible Assignment Companion
+summary: A responsive React + TypeScript web app that helps college students manage assignments and reduce academic stress — built with deep accessibility support from the ground up.
+link: https://hannrep4.github.io/resume-analysis-project/
 ---
 
-## The Opportunity
+## The Problem
 
-Job searching is one of the most overwhelming experiences for students entering a competitive design field. Generic job boards return hundreds of irrelevant results. Applicant tracking systems penalize unconventional resumes. And early-career candidates often don't know what they don't know.
+College students dealing with heavy course loads often experience executive overload — the mental fatigue of tracking deadlines, managing priorities, and staying on top of everything at once. Existing task apps are functional, but rarely designed with student stress in mind.
 
-I set out to explore: *what would a job search experience look like if it was designed specifically for designers who are still building their portfolio?*
+**My goal:** Build a polished, production-ready frontend app that addresses a real student pain point, while proving I could ship something accessible and complete — not just a prototype.
 
-## Research
+## What I Built
 
-I studied the job search habits of five design students and two recent graduates through user interviews. I also did a competitive analysis of LinkedIn, Glassdoor, Handshake, and Dribbble Jobs, looking for patterns in what worked and what created anxiety.
+The **Accessible Assignment Companion** is a responsive web app that combines assignment tracking with a supportive virtual companion interface. The companion responds to the student's workload state, making the experience feel less like a to-do list and more like having a study buddy.
 
-**Key findings:**
+Key features:
 
-- Early-career designers frequently applied to roles they were underqualified for because they couldn't accurately self-assess
-- Most tools surface "what exists" rather than "what fits you"
-- Portfolio gaps created decision paralysis — users didn't know which project to lead with for which role
-- AI resume screeners (ATS) were a major source of fear and confusion
+- **Assignment tracking** — add, manage, and check off tasks across courses
+- **Companion system** — virtual companion with emotional responses tied to workload state
+- **Responsive layout** — works on desktop, tablet, and mobile without breaking
+- **Full accessibility** — keyboard navigation, visible focus states, reduced motion support, semantic HTML, and contrast-aware theming throughout
 
-## Understanding AI in Hiring
+## Tech Stack
 
-A major part of this project was researching how AI has changed the hiring landscape. I studied:
+Built with **React + TypeScript** and deployed to GitHub Pages via Vite. TypeScript made up ~56% of the codebase, with CSS accounting for the rest — no component library dependencies, all custom.
 
-- How ATS systems parse and rank resumes
-- How recruiters at design studios use AI tools to pre-screen candidates
-- What signals AI screeners look for that differ from human reviewers
-- How designers can present themselves in ways that work *with* algorithmic screening, not against it
+## Accessibility as a Design Priority
 
-This research shaped the core design thesis: **the tool should translate between "designer language" and "recruiter language."**
+Accessibility wasn't an afterthought — it was a core requirement I set for myself from the start. The app implements:
 
-## Design Concept
+- Semantic HTML structure throughout
+- Keyboard-friendly interactions on all interactive elements
+- Visible, styled focus states that don't break the visual design
+- `prefers-reduced-motion` support for users sensitive to animation
+- Text scaling that respects user browser settings
+- Contrast-aware theming that passes WCAG AA
 
-I designed a concept companion tool built around three features:
+## Process & Decisions
 
-**Smart Role Matching** — Instead of keyword search, the tool asks about your skills, your projects, and where you want to grow. It surfaces roles that match your current level *and* roles that would stretch you in the right direction.
+This project started with research — studying what frontend roles in product-focused companies actually expect, and what skills separate entry-level candidates from stronger ones. Accessibility kept coming up as a differentiator that most junior portfolios skip.
 
-**Portfolio Guidance** — Before applying to any role, the tool analyzes the job description and recommends which of your projects to feature — and how to frame them for that specific audience.
+I chose React with TypeScript over plain JavaScript to practice production-level patterns: typed props, component interfaces, and explicit state modeling. The companion's emotional response system required careful state design — different workload thresholds trigger different companion moods, which called for clear, testable logic rather than ad-hoc conditionals.
 
-**ATS-Aware Resume Tips** — The tool flags sections of your resume that may get filtered out by automated screening systems, and suggests language adjustments that preserve your voice while improving visibility.
+## Outcome
 
-## Design Process
-
-I produced:
-
-- User journey maps for two personas (a graduating senior and a mid-program student pivoting into UX)
-- Information architecture for the full tool flow
-- Mid-fidelity wireframes for the three core features
-- A high-fidelity prototype of the role-matching and portfolio guidance flows
-
-## Key Design Decisions
-
-**Conversational onboarding** — Rather than a form, the tool asks a series of guided questions that feel more like a conversation with a mentor than a job application.
-
-**"Growth path" framing** — Roles are labeled not just by match percentage, but by what skill you'd gain if you got the job. This reframes rejection as redirection.
-
-**Transparency about AI** — Every AI suggestion includes a short explanation of why it's recommending that change. The tool is a collaborator, not a black box.
+A fully deployed, accessible web application that demonstrates I can translate a user need into a complete, production-ready interface — not just a Figma mock.
 
 ## Reflection
 
-This project pushed me to think about design as systems thinking, not just visual craft. I had to understand AI systems, hiring workflows, and career psychology before I could make good interface decisions. The most important lesson: knowing which parts of the process should remain human is itself a design decision.
-
-The AI handles pattern-matching. The human handles judgment.
+The biggest lesson was that accessibility and good design aren't opposites — they reinforce each other. Every decision I made for keyboard users also improved the experience for everyone else. Designing with constraints made the product stronger.
