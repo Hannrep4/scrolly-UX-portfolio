@@ -31,12 +31,12 @@ export default function Nav() {
         </li>
         <li>
           <a
-            href="https://github.com/Hannrep4"
+            href="https://www.linkedin.com/in/hannah-repuyan"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.linkAccent}
           >
-            GitHub
+            LinkedIn
           </a>
         </li>
       </ul>
