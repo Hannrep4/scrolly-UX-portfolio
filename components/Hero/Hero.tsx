@@ -8,48 +8,68 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.grid} aria-hidden="true" />
 
-      <div className={styles.content}>
-        <motion.p
-          className={styles.eyebrow}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          ✦ UX/UI Designer & Digital Media Hobbyist
-        </motion.p>
+      <div className={styles.inner}>
+        {/* Left: text */}
+        <div className={styles.content}>
+          <motion.p
+            className={styles.eyebrow}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            ✦ UX/UI Designer & Digital Media Hobbyist
+          </motion.p>
 
-        <motion.h1
-          className={styles.heading}
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-        >
-          Hey! I&rsquo;m{' '}
-          <span className={styles.name}>Hannah.</span>
-        </motion.h1>
+          <motion.h1
+            className={styles.heading}
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Hey! I&rsquo;m{' '}
+            <span className={styles.name}>Hannah.</span>
+          </motion.h1>
 
-        <motion.p
-          className={styles.subheading}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          I&rsquo;m an aspiring UX/UI designer, researcher, and a digital media
-          hobbyist who loves cats.
-        </motion.p>
+          <motion.p
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            I&rsquo;m an aspiring UX/UI designer, researcher, and a digital media
+            hobbyist who loves cats.
+          </motion.p>
 
+          <motion.div
+            className={styles.ctas}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.55 }}
+          >
+            <a href="#projects" className={styles.ctaPrimary}>
+              See My Work
+            </a>
+            <a href="#about" className={styles.ctaSecondary}>
+              About Me
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right: photo */}
         <motion.div
-          className={styles.ctas}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
+          className={styles.photoWrapper}
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <a href="#projects" className={styles.ctaPrimary}>
-            See My Work
-          </a>
-          <a href="#about" className={styles.ctaSecondary}>
-            About Me
-          </a>
+          <div className={styles.photoAccentRing} aria-hidden="true" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/profile.jpg`}
+            alt="Hannah smiling in a bright atrium"
+            className={styles.photo}
+          />
+          <div className={styles.photoBadge} aria-hidden="true">👋</div>
         </motion.div>
       </div>
 
