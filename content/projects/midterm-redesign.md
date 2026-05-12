@@ -1,62 +1,53 @@
 ---
 slug: midterm-redesign
-title: Campus Event Discovery Redesign
-summary: A UX redesign of a university event discovery platform — making it easier for students to find, filter, and attend events that actually matter to them.
-link: "#"
+title: Budget Basket
+summary: A Vite + React web app that helps college students plan groceries within a tight budget before they ever set foot in a store — with two distinct workflows and a live AI chat assistant.
+link: https://student-reality-lab-v2-repuyan.vercel.app/
 ---
 
 ## The Problem
 
-Students were missing out on campus events — not because they weren't interested, but because the existing system made discovery frustrating. The event portal was cluttered, hard to filter, and offered no sense of personalization. Most students resorted to word-of-mouth or social media instead.
+College students are constantly navigating one of the most frustrating adult challenges: eating well on almost no money. Meal planning feels overwhelming, and most students end up either overspending or buying random things that don't add up to actual meals.
 
-**My goal:** Redesign the core event discovery experience so students could find what they wanted in seconds, not minutes.
+**The goal:** Build a web app with two distinct grocery planning workflows — one guided and fast, one flexible and manual — so students could plan their shopping before spending a single dollar.
 
-## Research & Discovery
+## The Concept
 
-I conducted five semi-structured user interviews with undergraduate students from different majors. I also performed a heuristic evaluation of the existing portal against Nielsen's 10 usability heuristics.
+The project followed a **STAR narrative structure** to keep the design grounded in a real scenario:
 
-Key findings from research:
+- **Situation** — College students struggle to balance limited grocery budgets with actual meal needs
+- **Task** — Build a tool with two planning modes: fast and guided, or slow and manual
+- **Action** — Develop a landing page, a guided list generator, and an interactive builder with live budget tracking
+- **Result** — Students get a clearer, lower-stress decision-making tool that works before they shop
 
-- Students gave up on the portal within 30 seconds if they couldn't immediately find a relevant event
-- The filtering system was buried three levels deep in a sidebar
-- No visual hierarchy distinguished between event types or urgency
-- 4 out of 5 students said they primarily heard about events from friends
+## What I Built
 
-## Defining the Problem
+**Budget Basket** is a Vite + React application with two core workflows:
 
-After synthesizing my research into an affinity map, two core pain points stood out:
+**Guided Generator** — Takes inputs like income, weekly budget, and food preferences, and generates an affordable weekly grocery list automatically. Designed for students who want a fast answer and don't want to think too hard about it.
 
-1. **Discoverability** — relevant events were impossible to surface quickly
-2. **Trust** — the portal looked outdated, which made students assume the information was stale
+**Interactive Builder** — A manual list-building experience where students can add, adjust, and remove items while a live budget tracker updates in real time. Built for students who want more control over what ends up in their cart.
 
-I framed the design challenge as: *How might we make campus event discovery feel as fast and intuitive as scrolling through social media?*
+**AI Chat Assistant** — A floating chat box powered by the OpenAI API lets students ask budget questions, get meal suggestions, or troubleshoot their list without leaving the app.
 
-## Design Process
+## Data System
 
-I created low-fidelity wireframes to test three different navigation models:
+Grocery pricing pulls from real CSV data files loaded at runtime from the `public/data` directory — fruit prices, vegetable prices, and beef cuts sourced from 2023 USDA datasets. If the CSV files are unavailable, the app falls back to a built-in sample catalog so the experience never breaks.
 
-- A card-based feed (social media style)
-- A calendar-first view
-- A filtered list with persistent sidebar
+## Tech Stack
 
-After two rounds of quick prototype testing with peers, the **card-based feed** performed best for initial discovery, while the filtered list worked better for planning ahead.
+Built with **Vite + React**, deployed to Vercel. JavaScript made up ~76% of the codebase with CSS handling the rest — no UI library, fully custom components and layout.
 
-I combined both patterns into a hybrid design: a feed view with a persistent, collapsible filter panel.
+The OpenAI Chat Completions API powers the floating assistant. The app reads `VITE_OPENAI_API_KEY` from a `.env` file for local development.
 
 ## Key Design Decisions
 
-**Simplified navigation** — Reduced clicks from an average of 5 to 2 to reach a relevant event.
+**Two workflows, not one** — Rather than building one generic list-builder, I kept the guided and manual flows completely separate. Users with different needs and patience levels get different entry points. Forcing them into the same flow would have served neither well.
 
-**Visual event cards** — Each card includes category tag, date, location, and a one-tap RSVP button — all visible without scrolling.
+**Runtime CSV loading** — Hardcoding prices would have made the data stale immediately. Loading from CSVs at runtime means the pricing data can be updated without touching the application code.
 
-**Smart filters** — Filter panel organized by category, date range, and audience type (all students, commuters, grad students, etc.).
-
-**Status indicators** — Color-coded tags for "Happening Today," "This Week," and "RSVP Required" to create urgency and relevance.
-
-## Outcome
-
-In usability testing with five new participants, task completion time dropped by 60%. Users described the new design as "actually useful" and "way less stressful." One participant said: *"This is what it should have looked like from the start."*
+**Graceful fallback** — If the CSV files fail to load, the app defaults to a sample catalog instead of breaking. The user experience stays intact even when the data source doesn't.
 
 ## Reflection
 
-This project taught me that good UX isn't always about adding features — it's often about removing friction. The biggest gains came from surface-level changes: better card hierarchy and accessible filters. The research phase was the most valuable part; without it, I would have built the wrong thing.
+This project pushed me to think about data-driven UI design — how the source and shape of your data changes what's possible in the interface. The two-workflow structure was the most interesting design challenge: figuring out how to give users a clear choice upfront without overwhelming them with options. Less is more, until it isn't.
